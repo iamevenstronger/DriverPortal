@@ -4,7 +4,7 @@ if (!hasSession()) {
 }
 
 // Scanner Instance
-let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+let scanner = new Instascan.Scanner({ video: document.getElementById('preview') ,mirror: true, scanPeriod: 1});
 let activeCamera = 0;
 let cameraDevices = [];
 // QR Scan listener
