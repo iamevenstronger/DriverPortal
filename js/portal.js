@@ -13,8 +13,6 @@ var span = document.getElementsByClassName("close")[0];
 // QR Scan listener
 scanner.addListener('scan', function (content) {
     console.log(content);
-    var contentMsg = "<center><img src='assets/loader.gif' width='50' height='50'><p style='font-size:10pt;color:#0000f0; '>Loading...<p></center>" ;
-    document.getElementById("modalContent").innerHTML = contentMsg ;
     modal.style.display = "block";
     var ref = firebase.database().ref();                           
     ref.on("value", function(snapshot){
@@ -22,6 +20,8 @@ scanner.addListener('scan', function (content) {
         console.log(json);
         if(json.encryptedData) {
             var flag = 0 ;
+            var contentMsg = "<center><img src='assets/loader.gif' width='50' height='50'><p style='font-size:10pt;color:#0000f0; '>Loading...<p></center>" ;
+            document.getElementById("modalContent").innerHTML = contentMsg ;
             for(var i = 0 ; i < json.encryptedData.length ; i++) {
                 var element = json.encryptedData[i] ;
                 if(element == content) {
