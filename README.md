@@ -22,7 +22,6 @@ vegeta          bulma
 ### 'test.json' is the json you have to import in your RealTime Database for test with the given QRCodeGeneration samples in path 'QRCodeSample/*.png'
 
 ### QRCodeSample/user1.png
-![user1](https://iamevenstronger.github.io/QRCodeSample/user1.png)
-
+![user1](https://user-images.githubusercontent.com/31339549/36631233-6d579134-199a-11e8-98d1-90684066170f.png)
 ### QRCodeSample/user2.png
-![user2](https://iamevenstronger.github.io/QRCodeSample/user2.png)
+![user2](https://user-images.githubusercontent.com/31339549/36631234-7155d516-199a-11e8-81e0-a687f6fb7b9d.png)
