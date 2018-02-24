@@ -8,7 +8,7 @@ goku            chichi
 vegeta          bulma
 ```
 
-## Note Change your Firebase config data to 'portal.js' file
+## Note: Change your Firebase config data in 'portal.js' file
 ```
     var config = {
       apiKey: "<yourkey>",
@@ -25,4 +25,4 @@ vegeta          bulma
 ![user1](https://iamevenstronger.github.io/QRCodeSample/user1.png)
 
 ### QRCodeSample/user2.png
-![user1](https://iamevenstronger.github.io/QRCodeSample/user2.png)
+![user2](https://iamevenstronger.github.io/QRCodeSample/user2.png)
