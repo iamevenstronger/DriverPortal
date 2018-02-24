@@ -26,7 +26,7 @@ scanner.addListener('scan', function (content) {
                 var element = json.encryptedData[i] ;
                 if(element == content) {
                     flag = 1 ; break;
-                }
+                } 
             }
             if(flag == 1) {
                 contentMsg = "<center><img src='assets/right.png' width='50' height='50'><p style='font-size:10pt;color:#00f000; '>Passenger Check-In!<p></center>" ;
