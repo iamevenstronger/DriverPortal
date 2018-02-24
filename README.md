@@ -1,6 +1,6 @@
-#Refference : [QRScanner Ref](https://github.com/schmich/instascan)
+# Refference : [QRScanner Ref](https://github.com/schmich/instascan)
 
-##Test Password
+## Test Password
 ```
 username        password
 test123         test123
@@ -8,7 +8,7 @@ goku            chichi
 vegeta          bulma
 ```
 
-#Note Change your Firebase config data to 'portal.js' file
+## Note Change your Firebase config data to 'portal.js' file
 ```
     var config = {
       apiKey: "<yourkey>",
@@ -19,10 +19,10 @@ vegeta          bulma
       messagingSenderId: "<yourid>"
     };
 ```
-# 'test.json' is the json you have to import in your RealTime Database for test with the given QRCodeGeneration samples in path 'QRCodeSample/*.png'
+### 'test.json' is the json you have to import in your RealTime Database for test with the given QRCodeGeneration samples in path 'QRCodeSample/*.png'
 
-# QRCodeSample/user1.png
+### QRCodeSample/user1.png
 ![user1](https://iamevenstronger.github.io/QRCodeSample/user1.png)
 
-# QRCodeSample/user2.png
+### QRCodeSample/user2.png
 ![user1](https://iamevenstronger.github.io/QRCodeSample/user2.png)
