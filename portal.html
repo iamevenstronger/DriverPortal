@@ -46,6 +46,7 @@
     .cam-btn:active {
       border: 10px solid #f80000;
     }
+
     #qrbtn {
       padding: 10px;
     }
@@ -53,9 +54,9 @@
 </head>
 
 <body>
+  <div class="header">QR Scanner</div>
+  <video id="preview" autoplay="autoplay" class="active" style="transform: scaleX(-1);"></video>
   <div class="container camera-container">
-    <div class="header">QR Scanner</div>
-    <video id="preview" autoplay="autoplay" class="active" style="transform: scaleX(-1);"></video>
     <center>
       <img class="cam-btn" onclick="selectCamera()" title="camera flip" src="assets/camera.png" width="50" height="50" />
     </center>
