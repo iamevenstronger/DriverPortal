@@ -7,11 +7,36 @@ if (!hasSession()) {
 let scanner = new Instascan.Scanner({ video: document.getElementById('preview') ,mirror: false});
 let activeCamera = 0;
 let cameraDevices = [];
+var modal = document.getElementById('myModal');
+var span = document.getElementsByClassName("close")[0];
+
 // QR Scan listener
 scanner.addListener('scan', function (content) {
-    document.getElementById('qrcontent').innerHTML = content ;
-    document.getElementById('qrbtn').style.display = "block" ;
     console.log(content);
+    var contentMsg = "<center><img src='assets/loader.gif' width='50' height='50'><p style='font-size:10pt;color:#0000f0; '>Loading...<p></center>" ;
+    document.getElementById("modalContent").innerHTML = contentMsg ;
+    modal.style.display = "block";
+    var ref = firebase.database().ref();                           
+    ref.on("value", function(snapshot){
+        var json = snapshot.val();
+        console.log(json);
+        if(json.encryptedData) {
+            var flag = 0 ;
+            for(var i = 0 ; i < json.encryptedData.length ; i++) {
+                var element = json.encryptedData[i] ;
+                if(element == content) {
+                    flag = 1 ; break;
+                }
+            }
+            if(flag == 1) {
+                contentMsg = "<center><img src='assets/right.png' width='50' height='50'><p style='font-size:10pt;color:#00f000; '>Passenger Check-In!<p></center>" ;
+            } else {
+                contentMsg = "<center><img src='assets/wrong.png' width='50' height='50'><p style='font-size:10pt;color:#f00000;'>Invalid Passenger!<p></center>" ;
+            }
+            document.getElementById("modalContent").innerHTML = contentMsg ;
+            modal.style.display = "block";
+        }
+    });
 });
 
 // Get All Camera Devices
@@ -25,10 +50,6 @@ Instascan.Camera.getCameras().then(function (cameras) {
 }).catch(function (e) {
     console.error(e);
 });
-
-function showBtn() {
-    document.getElementById('qrbtn').style.display = "none" ;
-}
 
 function selectCamera() {
     if(cameraDevices.length == 1) {
@@ -50,4 +71,14 @@ function hasSession() {
         }
     }
     return false;
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
