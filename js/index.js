@@ -9,9 +9,11 @@ function loginMethod() {
     }
     var jsonData = dataObject;
     var flag = 0 ;
+    var role = "";
     jsonData.forEach(element => {
         if (element.username == username && element.password == password) {
             localStorage.setItem("driverToken", element.token);
+            role = element.role ;
             flag = 1 ;
         }
     });
@@ -19,7 +21,11 @@ function loginMethod() {
         alert("Please enter right credentials!");
         return false;
     } else {
-        window.location.href = "portal.html";
+        if(role === "driver"){
+            window.location.href = "portal.html";
+        } else {
+            window.location.href = "owner.html";
+        }
         return true;
     }
 }
