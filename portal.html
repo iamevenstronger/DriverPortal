@@ -11,13 +11,50 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="dataload.js"></script>
   <script type="text/javascript" src="js/instascan.min.js"></script>
   <style>
     body {
       background: url(assets/1.jpg);
       background-color: #444;
       background-repeat: repeat;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 200px;
+      height: 150px;
+    }
+
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
     }
 
     .camera-container {
@@ -46,6 +83,7 @@
     .cam-btn:active {
       border: 10px solid #f80000;
     }
+
     #qrbtn {
       padding: 10px;
     }
@@ -53,36 +91,35 @@
 </head>
 
 <body>
+  <div class="header">QR Scanner</div>
+  <video id="preview" autoplay="autoplay" class="active" style="transform: scaleX(-1);"></video>
   <div class="container camera-container">
-    <div class="header">QR Scanner</div>
-    <video id="preview" autoplay="autoplay" class="active" style="transform: scaleX(-1);"></video>
     <center>
       <img class="cam-btn" onclick="selectCamera()" title="camera flip" src="assets/camera.png" width="50" height="50" />
     </center>
   </div>
-  <center>
-    <button style="display:none" id="qrbtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-      QR Content Detected!
-    </button>
-  </center>
 
-  <!-- The Modal -->
-  <div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">QR Scanned Content</h4>
-          <button type="button" class="close" onclick="showBtn()" data-dismiss="modal">&times;</button>
-        </div>
-        <div id="qrcontent" class="modal-body">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" onclick="showBtn()" data-dismiss="modal">Close</button>
-        </div>
-      </div>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <br>
+      <p style="padding:5px;" id="modalContent"></p>
     </div>
   </div>
 
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyC-E63qrCwvgjXqXo5L4m1ngq5rxW7_pm0",
+      authDomain: "driverportal-1041e.firebaseapp.com",
+      databaseURL: "https://driverportal-1041e.firebaseio.com",
+      projectId: "driverportal-1041e",
+      storageBucket: "driverportal-1041e.appspot.com",
+      messagingSenderId: "1072948795355"
+    };
+    firebase.initializeApp(config);
+  </script>
   <script src="js/portal.js"></script>
 </body>
 
