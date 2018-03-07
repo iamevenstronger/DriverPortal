@@ -17,3 +17,12 @@ function hasSession() {
     }
     return false;
 }
+
+function setSeatStatus() {
+    var darkColors = ["#fefefe","#009900","#990000"] ;
+    var jsonDataTemp = {
+        a1: 0, a2: 1, b1: 2, b2: 0
+    }
+    document.getElementById('a1').style.borderColor = darkColors[jsonDataTemp.a1] ;
+    document.getElementById('a1').style.borderColor = darkColors[jsonDataTemp.a1] ;
+}
