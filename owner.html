@@ -23,11 +23,11 @@
         table {
             width: 20%;
             background-color: #fefefe;
-            border-radius: 10px;
+            border-radius: 10px;=
         }
 
         th {
-            padding: 10px 10px 10px 10px;
+            padding: 5px;
         }
 
         .seat {
@@ -37,19 +37,25 @@
             background-color: #dadada;
             text-align: center;
             vertical-align: center;
+            cursor: pointer;
+            border: 2px solid #414141;
         }
 
-        .seat:hover {
-            border: 2px solid #414141;
-            border-radius: 10px;
+        .nav-bar {
+            background-color:#ffffff;
+            position:absolute;
+            top:0px;
+            text-align: center;
+            width: 100%;
+            padding: 5px;
         }
     </style>
 
-    <body>
+    <body onload="setSeatStatus()">
         <center>
-            <h1>
+            <div class="nav-bar">
                 Owner Portal
-            </h1>
+            </div><br><br>
             <table align="center">
                 <tr>
                     <th>
@@ -66,6 +72,20 @@
                             </div>
                         </center>
                     </th>
+                    <th>
+                        <center>
+                            <div id="a3" class="seat">
+                                A3
+                            </div>
+                        </center>
+                    </th>
+                    <th>
+                        <center>
+                            <div id="a4" class="seat">
+                                A4
+                            </div>
+                        </center>
+                    </th>
                 </tr>
                 <tr>
                     <th>
@@ -79,6 +99,110 @@
                         <center>
                             <div id="b2" class="seat">
                                 B2
+                            </div>
+                        </center>
+                    </th>
+                    <th>
+                        <center>
+                            <div id="b3" class="seat">
+                                B3
+                            </div>
+                        </center>
+                    </th>
+                    <th>
+                        <center>
+                            <div id="b4" class="seat">
+                                B4
+                            </div>
+                        </center>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <center>
+                            <div id="c1" class="seat">
+                                C1
+                            </div>
+                        </center>
+                    </th>
+                    <th>
+                        <center>
+                            <div id="c2" class="seat">
+                                C2
+                            </div>
+                        </center>
+                    </th>
+                    <th>
+                        <center>
+                            <div id="c3" class="seat">
+                                C3
+                            </div>
+                        </center>
+                    </th>
+                    <th>
+                        <center>
+                            <div id="c4" class="seat">
+                                C4
+                            </div>
+                        </center>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <center>
+                            <div id="d1" class="seat">
+                                D1
+                            </div>
+                        </center>
+                    </th>
+                    <th>
+                        <center>
+                            <div id="d2" class="seat">
+                                D2
+                            </div>
+                        </center>
+                    </th>
+                    <th>
+                        <center>
+                            <div id="d3" class="seat">
+                                D3
+                            </div>
+                        </center>
+                    </th>
+                    <th>
+                        <center>
+                            <div id="d4" class="seat">
+                                D4
+                            </div>
+                        </center>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <center>
+                            <div id="e1" class="seat">
+                                E1
+                            </div>
+                        </center>
+                    </th>
+                    <th>
+                        <center>
+                            <div id="e2" class="seat">
+                                E2
+                            </div>
+                        </center>
+                    </th>
+                    <th>
+                        <center>
+                            <div id="e3" class="seat">
+                                E3
+                            </div>
+                        </center>
+                    </th>
+                    <th>
+                        <center>
+                            <div id="e4" class="seat">
+                                E4
                             </div>
                         </center>
                     </th>
