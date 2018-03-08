@@ -19,7 +19,8 @@ function hasSession() {
 }
 
 function setSeatStatus() {
-    var darkColors = ["#fefefe","#009900","#990000"] ;
+    var darkColors = ["#787878","#009900","#990000"] ;
+    var lightColors = ["#dfdfdf","#78ff43","#f44747"] ;
     var jsonDataTemp = {
         a1: 0, a2: 1, a3: 2, a4: 0,
         b1: 0, b2: 0, b3: 0, b4: 0,
@@ -27,6 +28,7 @@ function setSeatStatus() {
         d1: 0, d2: 0, d3: 0, d4: 0,
         e1: 0, e2: 0, e3: 0, e4: 0,
     }
+    // border Colors
     document.getElementById('a1').style.borderColor = darkColors[jsonDataTemp.a1] ;
     document.getElementById('a2').style.borderColor = darkColors[jsonDataTemp.a2] ;
     document.getElementById('a3').style.borderColor = darkColors[jsonDataTemp.a3] ;
@@ -51,5 +53,31 @@ function setSeatStatus() {
     document.getElementById('e2').style.borderColor = darkColors[jsonDataTemp.e2] ;
     document.getElementById('e3').style.borderColor = darkColors[jsonDataTemp.e3] ;
     document.getElementById('e4').style.borderColor = darkColors[jsonDataTemp.e4] ;
+
+    // Bg Colors
+    document.getElementById('a1').style.backgroundColor = lightColors[jsonDataTemp.a1] ;
+    document.getElementById('a2').style.backgroundColor = lightColors[jsonDataTemp.a2] ;
+    document.getElementById('a3').style.backgroundColor = lightColors[jsonDataTemp.a3] ;
+    document.getElementById('a4').style.backgroundColor = lightColors[jsonDataTemp.a4] ;
+
+    document.getElementById('b1').style.backgroundColor = lightColors[jsonDataTemp.b1] ;
+    document.getElementById('b2').style.backgroundColor = lightColors[jsonDataTemp.b2] ;
+    document.getElementById('b3').style.backgroundColor = lightColors[jsonDataTemp.b3] ;
+    document.getElementById('b4').style.backgroundColor = lightColors[jsonDataTemp.b4] ;
+
+    document.getElementById('c1').style.backgroundColor = lightColors[jsonDataTemp.c1] ;
+    document.getElementById('c2').style.backgroundColor = lightColors[jsonDataTemp.c2] ;
+    document.getElementById('c3').style.backgroundColor = lightColors[jsonDataTemp.c3] ;
+    document.getElementById('c4').style.backgroundColor = lightColors[jsonDataTemp.c4] ;
+
+    document.getElementById('d1').style.backgroundColor = lightColors[jsonDataTemp.d1] ;
+    document.getElementById('d2').style.backgroundColor = lightColors[jsonDataTemp.d2] ;
+    document.getElementById('d3').style.backgroundColor = lightColors[jsonDataTemp.d3] ;
+    document.getElementById('d4').style.backgroundColor = lightColors[jsonDataTemp.d4] ;
+
+    document.getElementById('e1').style.backgroundColor = lightColors[jsonDataTemp.e1] ;
+    document.getElementById('e2').style.backgroundColor = lightColors[jsonDataTemp.e2] ;
+    document.getElementById('e3').style.backgroundColor = lightColors[jsonDataTemp.e3] ;
+    document.getElementById('e4').style.backgroundColor = lightColors[jsonDataTemp.e4] ;
 
 }

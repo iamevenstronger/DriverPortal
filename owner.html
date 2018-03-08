@@ -9,6 +9,7 @@
 
     <script src="dataload.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="dataload.js"></script>
@@ -23,7 +24,7 @@
         table {
             width: 20%;
             background-color: #fefefe;
-            border-radius: 10px;=
+            border-radius: 10px;
         }
 
         th {
@@ -38,13 +39,13 @@
             text-align: center;
             vertical-align: center;
             cursor: pointer;
-            border: 2px solid #414141;
+            border: 2px solid #242424;
         }
 
         .nav-bar {
-            background-color:#ffffff;
-            position:absolute;
-            top:0px;
+            background-color: #ffffff;
+            position: absolute;
+            top: 0px;
             text-align: center;
             width: 100%;
             padding: 5px;
@@ -52,10 +53,20 @@
     </style>
 
     <body onload="setSeatStatus()">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a style="font-weight:bold;" class="navbar-brand" href="#">Bus+</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" onclick="setInterval(logoutSession, 1000)">
+                            <span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <center>
-            <div class="nav-bar">
-                Owner Portal
-            </div><br><br>
             <table align="center">
                 <tr>
                     <th>
@@ -210,6 +221,7 @@
             </table>
         </center>
         <script src="js/owner.js"></script>
+        <script src="js/logout.js"></script>
     </body>
 
 </html>
