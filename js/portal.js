@@ -20,16 +20,26 @@ scanner.addListener('scan', function (content) {
         console.log(json);
         if(json.encryptedData) {
             var flag = 0 ;
+			var seat = '';
             var contentMsg = "<center><img src='assets/loader.gif' width='50' height='50'><p style='font-size:10pt;color:#0000f0; '>Loading...<p></center>" ;
             document.getElementById("modalContent").innerHTML = contentMsg ;
             for(var i = 0 ; i < json.encryptedData.length ; i++) {
                 var element = json.encryptedData[i] ;
                 if(element == content) {
+					if(i == 0) 
+					{ seat = "{ \"A1\":3,\"A2\":0, \"A3\" :0,\"A4\":0,\"B1\":0,\"B2\":0, \"B3\" :0,\"B4\":0,\"C1\":0,\"C2\":0, \"C3\" :0,\"C4\":0}"; }
+					else if(i == 1)
+					{ seat = "{ \"A1\":0,\"A2\":3, \"A3\" :0,\"A4\":0,\"B1\":0,\"B2\":0, \"B3\" :0,\"B4\":0,\"C1\":0,\"C2\":0, \"C3\" :0,\"C4\":0}"; }
+					else if(i == 2)
+					{ seat = "{ \"A1\":0,\"A2\":0, \"A3\" :3,\"A4\":0,\"B1\":0,\"B2\":0, \"B3\" :0,\"B4\":0,\"C1\":0,\"C2\":0, \"C3\" :0,\"C4\":0}"; }
+					else if(i == 3)
+					{ seat = "{ \"A1\":0,\"A2\":0, \"A3\" :0,\"A4\":3,\"B1\":0,\"B2\":0, \"B3\" :0,\"B4\":0,\"C1\":0,\"C2\":0, \"C3\" :0,\"C4\":0}"; }
                     flag = 1 ; break;
                 } 
             }
             if(flag == 1) {
                 contentMsg = "<center><img src='assets/right.png' width='50' height='50'><p style='font-size:10pt;color:#00f000; '>Passenger Check-In!<p></center>" ;
+				  firebase.database().ref('Passenger').set(seat);
             } else {
                 contentMsg = "<center><img src='assets/wrong.png' width='50' height='50'><p style='font-size:10pt;color:#f00000;'>Invalid Passenger!<p></center>" ;
             }

@@ -9,6 +9,7 @@
 
   <script src="dataload.js"></script>
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/instascan.min.js"></script>
@@ -91,6 +92,19 @@
 </head>
 
 <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a style="font-weight:bold;" class="navbar-brand" href="#">Bus+</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" onclick="setInterval(logoutSession, 1000)">
+                            <span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
   <div class="header">QR Scanner</div>
   <video id="preview" autoplay="autoplay" class="active" style="transform: scaleX(-1);"></video>
   <div class="container camera-container">
@@ -107,20 +121,22 @@
     </div>
   </div>
 
-  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyC-E63qrCwvgjXqXo5L4m1ngq5rxW7_pm0",
-      authDomain: "driverportal-1041e.firebaseapp.com",
-      databaseURL: "https://driverportal-1041e.firebaseio.com",
-      projectId: "driverportal-1041e",
-      storageBucket: "driverportal-1041e.appspot.com",
-      messagingSenderId: "1072948795355"
-    };
-    firebase.initializeApp(config);
-  </script>
+
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCABoTd_HW40dVoK5LMQsp-ed7O12fUjhE",
+    authDomain: "busplus-2c93b.firebaseapp.com",
+    databaseURL: "https://busplus-2c93b.firebaseio.com",
+    projectId: "busplus-2c93b",
+    storageBucket: "busplus-2c93b.appspot.com",
+    messagingSenderId: "507666397025"
+  };
+  firebase.initializeApp(config);
+</script>
   <script src="js/portal.js"></script>
+  <script src="js/logout.js"></script>
 </body>
 
 </html>
