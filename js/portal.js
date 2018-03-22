@@ -15,7 +15,7 @@ scanner.addListener('scan', function (content) {
     console.log(content);
     modal.style.display = "block";
     var ref = firebase.database().ref();                           
-    ref.on("value", function(snapshot){
+    ref.once("value", function(snapshot){
         var json = snapshot.val();
 		var seats = JSON.parse(json.Passenger);
         console.log(json);

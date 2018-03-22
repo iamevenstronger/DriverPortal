@@ -3,6 +3,16 @@ if (!hasSession()) {
     window.location.href = "error.html";
 }
 
+var seats = {
+    A1: 0,A2: 0,A3: 0,A4: 0,
+    B1: 0,B2: 0,B3: 0,B4: 0,
+    C1: 0,C2: 0,C3: 0,C4: 0,
+    D1: 0,D2: 0,D3: 0,D4: 0,
+    E1: 0,E2: 0,E3: 0,E4: 0, 
+};
+var seat = JSON.stringify(seats);
+firebase.database().ref('Passenger').set(seat);
+
 function hasSession() {
     var jsonData = dataObject;
     var flag = 0;
